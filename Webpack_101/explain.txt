@@ -1,0 +1,38 @@
+https://www.youtube.com/watch?v=lziuNMk_8eQ
+
+Webpack is a module bundler
+Take a fully dynamic app and generate static assets 
+
+---
+
+Properties of a module 
+Descrete chunk of code 
+Usally based on a single task 
+
+---
+
+Uses
+Code splitting 
+Loader (CSS,SASS, JSX(react), babel(es6), json, pug, typescript)
+Clever parsing 
+Plugins 
+
+--- 
+
+include js files within eachother 
+
+app.js => 
+var cats = ["dave", "henry","tommy"];
+module.exports = cats;
+
+other.js => 
+var cats = require('./cats.js');
+console.log(cats);
+
+---
+
+
+
+
+
+

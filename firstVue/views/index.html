@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>First VueJS</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+	<h1>VueJS rocks!</h1>
+	<a href="https://www.youtube.com/watch?v=2MAoq2-2nnE">Youtube Tutorial</a>
+	<div id="vue-app">
+		<h2>{{ greet('afternoon') }}</h2> <!-- function interpolation with parameters --> 
+		<p>Name: {{ name }}</p> <!-- string interpolation --> 
+		<p>Job: {{ job }}</p>
+		<!-- <a v-bind:href="website">Vue web</a> => binding data through v-bind:nameOfProp or :nameOfProp -->
+		<p v-html="websiteTag"></p>
+		<input type="text" :value="name" name="">
+		<hr>
+		<h2>Events</h2>
+		<!-- One way of doing it 
+		<button v-on:click="age++">+ Age</button>
+		<button v-on:click="age--">- Age</button> -->
+		<button @click="add(1)">+ Age</button>
+		<button v-on:click="subtract(1)">- Age</button>
+		<button @dblclick="add(10)">+ 10 years</button>
+		<button v-on:dblclick="subtract(10)">- 10 years</button>
+		<p>My age is {{age}}</p>
+		<div id="canvas" v-on:mousemove="updateXY">{{x}},{{y}}</div>
+		<hr>
+		<h2>Event modifiers</h2>
+		<a href="https://vuejs.org/v2/guide/events.html#Event-Modifiers">Event modifiers</a>
+		<button v-on:click.once="alertSth">Alert once</button>
+		<a v-on:click.prevent="alertSth" :href="website">This website will take you nowhere although it has a link</a>
+		<hr>
+		<h2>Keyboard Events</h2>
+		<a href="https://vuejs.org/v2/guide/events.html#Key-Modifiers">Key Modifiers</a>
+		<label>Name: </label>
+		<input type="text" v-on:keyup.enter="logName">
+		<label>Age: </label>
+		<input type="text" v-on:keyup.alt.enter="logAge">
+		<hr>
+		<h2>2 Way Binding</h2>
+		<label>Text One: </label>
+		<input type="text" v-model="txtOne">
+		<p>{{ txtOne }}</p>
+		<label>Text Two: </label>
+		<input type="text" v-model="txtTwo">
+		<p>{{ txtTwo }}</p>
+		<hr>
+		<h2>Computed Properties</h2>
+		<p>They are similar to methods but they are loaded when you open the page and they are listened to independently. <b>See console and console logs.</b></p>
+		<button @click="a++">Add to A</button>
+		<button @click="b++">Add to B</button> 
+		<p>A = {{a}}</p>
+		<p>B = {{b}}</p>
+		<p>Number + A = {{addToA}}</p>
+		<p>Number + B = {{addToB}}</p>
+		<hr>
+		<h2>Dynamic CSS</h2>
+		<h3>Example 1</h3>
+		<!--<div @click="available =! available" v-bind:class="{available:available}">
+			<span>Tom</span>
+		</div>-->
+		<h3>Example 2</h3>
+		<button @click="nearby =! nearby">Toggle nearby</button>
+		<button @click="available =! available">Toggle available</button>
+		<div  v-bind:class="compClasses">	
+			<span>Tom</span>
+		</div>
+
+	</div>
+	<!-- WE CANT use {{job}} outside the instance #vue-app -->
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
