@@ -1,0 +1,41 @@
+body {
+	text-align: center;
+	font-family: sans-serif;
+}
+
+#bag {
+	width: 200px;
+	height: 500px;
+	margin: 0 auto;
+	background: url('img/bag.png') center no-repeat;
+	background-size: 80%;
+}
+
+#bag.burst {
+	background: url('img/bag-burst.png') center no-repeat;
+	background-size: 80%;
+}
+
+#bag-health {
+	width: 200px;
+	border: 2px solid #000;
+	margin: 0 auto 20px auto;
+}
+
+#bag-health div {
+	height: 20px;
+	background-color: crimson;
+}
+
+button {
+	color: crimson;
+	border: 1px solid crimson;
+	background-color: white;
+	padding: 10px 15px;
+	font-size: 18px;
+	margin: 20px 0px;
+}
+
+button:focus {
+	outline: none;
+}
