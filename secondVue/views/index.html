@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>First VueJS</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+	<h1>Second Round</h1>
+	<a href="https://www.youtube.com/watch?v=k5p3TozQt84&t=6s">Youtube Tutorial</a>
+	<div id="vue-app-one">
+		<h2>{{title}}</h2>
+		<p>{{greet}}</p>
+		<greeting></greeting>
+	</div>
+
+	<div id="vue-app-two">
+		<h2>{{title}}</h2>
+		<p>{{greet}}</p>
+		<button @click="changeTitle">Change title in app one</button>
+		<greeting></greeting>
+		<hr>
+		<h2>Refs</h2>
+		<p>Grab elements and access data about that element through refs. Also used to update data inside an element. We can have as many refs as we want</p>
+		<input type="text" ref="input"/>
+		<button @click="readRefs">Submit</button>
+		<p>Your fav food is: {{output}}</p>
+	</div>
+	<script type="text/javascript" src="app.js"></script>
+</body>
+</html>
