@@ -1,18 +1,28 @@
 <template>
   <header>
-    <h1>{{ title }}</h1>
+    <h1 @click="changeTitle">{{ title }}</h1>
   </header>
 </template>
 
 
 <script>
 export default {
+  props: {
+    title: {
+      type: String
+    }
+  },
   components: {
     
   },
   data() {
     return {
       title: 'Vue Ninjas'
+    }
+  }, 
+  methods: {
+    changeTitle: function(){
+      this.$emit('changeTitle', 'Vue Magic'); // emiting events with a function and the info is emiting 
     }
   }
 }
