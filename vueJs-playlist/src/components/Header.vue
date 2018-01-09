@@ -6,6 +6,7 @@
 
 
 <script>
+import{ bus } from'../main';
 export default {
   props: {
     title: {
@@ -22,7 +23,9 @@ export default {
   }, 
   methods: {
     changeTitle: function(){
-      this.$emit('changeTitle', 'Vue Magic'); // emiting events with a function and the info is emiting 
+      //this.$emit('changeTitle', 'Vue Magic'); // emiting events with a function and the info is emiting 
+      this.title = 'Vue Wizards';
+      bus.$emit('titleChanged', 'Vue Wizards');
     }
   }
 }

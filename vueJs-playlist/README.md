@@ -5,16 +5,16 @@
 > Vue Rocks :)
 > Usage => 
 
-``` bash
-# install dependencies
-npm install
+     bash
+     # install dependencies
+     npm install
 
-# serve with hot reload at localhost:8080
-npm run dev
+     # serve with hot reload at localhost:8080
+     npm run dev
 
-# build for production with minification
-npm run build
-```
+     # build for production with minification
+     npm run build
+
 
 ## Props
 
@@ -41,5 +41,62 @@ Use an event to change the original info in the parent or root component to upda
 
 For this, we create a method that reacts to the @click inside the header component by using $emit, a function and giving it info to pass through. Then we bind that info inside the component tag in the root component and we create a method to pass that info created in the child method. 
 
+
+## Event Bus
+
+Connect two child components with out the root component. 
+
+ 
+     # in main.js
+     export const bus = new Vue();
+
+    # in Header.vue and Footer.vue
+    import{ bus } from'../main';
+
+    # in Header.vue 
+    methods: {
+	changeTitle: function(){
+	  this.title = 'Vue Wizards';
+	  bus.$emit('titleChanged', 'Vue Wizards');
+    }
+    }
+
+    # in Footer.vue
+    created(){
+    bus.$on('titleChanged', (data) => {
+      this.title = data;
+    })
+    }
+
+
+## Life-cyple hook
+
+1. beforeCreate => we can run some code prior to being created 
+2. created => not mounted in DOM yet , also good point to fetch data in DB
+3. beforeMount => do something before mounting 
+4. mounted => access in DOM 
+5. beforeUpdate => makes rerendering 
+6. updated => DOM again 
+7. beforeDestroy 
+8. destroy => final clean up 
+
+    beforeCreate(){
+        alert('beforeCreate');
+      },
+      created(){
+        alert('created');
+      },
+      beforeMount(){
+        alert('beforeMount');
+      },
+      mounted(){
+        alert('mounted');
+      },
+      beforeUpdate(){
+        alert('beforeUpdate');
+      }, 
+      updated(){
+        alert('updated');
+      }
 
 
