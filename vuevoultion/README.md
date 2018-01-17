@@ -43,11 +43,11 @@ Slots allow us to input data from a parent component into a child component.
 ## POST blog 
 
 1. Install vue resource: npm install vue-resource --save
-2. Create a button to submit blog post: 
+2. Create a button to submit blog post. 
 
     <button class="btnSubmit" @click.prevent="postForm">Add Blog</button>
 
-3. Create method to post request: 
+3. Create method to post request. 
 
     methods: {
         postForm: function(){ // use of vue-resourse 
@@ -79,5 +79,6 @@ Slots allow us to input data from a parent component into a child component.
 --- 
 
 # Custom Directives 
+
 
 
