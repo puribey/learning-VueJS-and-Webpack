@@ -1,8 +1,22 @@
 <template>
+  <div>
+    <add-blog></add-blog>
+  </div>
+
+  <!-- TUTORIAL 28 = Dynamic Components
+  <div>
+    <keep-alive> 
+      <component v-bind:is="component"></component>
+    </keep-alive>
+    <button @click="component= 'form-one'">Show form one</button>
+    <button @click="component= 'form-two'">Show form one</button>
+  </div> 
+  -->
+  <!-- TUTORIAL 27 = Slots 
   <div id="app">
     <form-helper>
       <div slot="form-header">
-        <h3>This is the title of the form</h3>
+        <h3>This is the title of the form </h3>
         <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. </p>
       </div> 
       <div slot="form-fields">
@@ -14,18 +28,25 @@
       </div>
     </form-helper>
   </div>
+  -->
 </template>
 
 <script>
-import formHelper from './components/formHelper.vue'
+// import formHelper from './components/formHelper.vue' // TUTORIAL 27 = Slots 
+// import formOne from './components/formOne.vue'; // TUTORIAL 28 = Dynamic Components
+// import formTwo from './components/formTwo.vue'; // TUTORIAL 28 = Dynamic Components
+import addBlog from './components/addBlog.vue';
 
 export default {
   components: {
-    'form-helper': formHelper
+    //'form-helper': formHelper //  TUTORIAL 27 = Slots 
+    //'form-one': formOne, // TUTORIAL 28 = Dynamic Components
+    //'form-two': formTwo // TUTORIAL 28 = Dynamic Components
+    'add-blog': addBlog
   },
   data () {
     return {
-      title: 'I am the slot H2 title'
+      // component:'form-one' // TUTORIAL 28 = Dynamic Components
     }
   }
 }
