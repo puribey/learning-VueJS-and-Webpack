@@ -34,8 +34,51 @@ Slots allow us to input data from a parent component into a child component.
 * We can use input binding to clone what we write in an input inside another section of our page.
 * v-model.lazy="blog.title" is to make the content output when we change inputs, press tab or move out of the input. 
 
-    # in addBlog.vue 
-    
+    # in addBlog.vue --> see code 
 
+---
+
+# HTTP Requests in Vue
+
+
+## POST blog 
+
+1. Install vue resource: npm install vue-resource --save
+2. Create a button to submit blog post: 
+
+    <button class="btnSubmit" @click.prevent="postForm">Add Blog</button>
+
+3. Create method to post request: 
+
+    methods: {
+        postForm: function(){ // use of vue-resourse 
+            this.$http.post('https://jsonplaceholder.typicode.com/posts',{
+                title: this.blog.title,
+                body: this.blog.content,
+                userID: 1
+            }).then(function(data){
+                console.log(data);
+                this.submitted = true; //shows text of success 
+            });
+        }
+    }
+
+## GET blogs 
+
+1. Create a new component to output blogs in our data base. 
+2. Inside "created" we are going to make the get request of info from the API. 
+
+    # in showBlogs.vue
+
+    created(){
+      this.$http.get('https://jsonplaceholder.typicode.com/posts').then(function(data){
+        // console.log(data);
+        this.blogs = data.body.slice(0,10); // blogs is created in data()
+       });
+    }
+
+--- 
+
+# Custom Directives 
 
 

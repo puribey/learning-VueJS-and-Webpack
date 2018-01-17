@@ -69,7 +69,7 @@ Connect two child components with out the root component.
     }
 
 
-## Life-cyple hook
+## Life-cycle hook
 
 1. beforeCreate => we can run some code prior to being created 
 2. created => not mounted in DOM yet , also good point to fetch data in DB

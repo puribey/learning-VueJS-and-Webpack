@@ -36,8 +36,5 @@ export default {
 </script>
 
 <style>
-body{
-    margin: 0;
-    font-family: 'Nunito SemiBold';
-}
+
 </style>

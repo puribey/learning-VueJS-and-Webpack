@@ -1,6 +1,7 @@
 <template>
-  <div>
+  <div id="app">
     <add-blog></add-blog>
+    <show-blogs></show-blogs>
   </div>
 
   <!-- TUTORIAL 28 = Dynamic Components
@@ -36,13 +37,16 @@
 // import formOne from './components/formOne.vue'; // TUTORIAL 28 = Dynamic Components
 // import formTwo from './components/formTwo.vue'; // TUTORIAL 28 = Dynamic Components
 import addBlog from './components/addBlog.vue';
+import showBlogs from './components/showBlogs.vue';
+
 
 export default {
   components: {
     //'form-helper': formHelper //  TUTORIAL 27 = Slots 
     //'form-one': formOne, // TUTORIAL 28 = Dynamic Components
     //'form-two': formTwo // TUTORIAL 28 = Dynamic Components
-    'add-blog': addBlog
+    'add-blog': addBlog,
+    'show-blogs': showBlogs
   },
   data () {
     return {
@@ -57,12 +61,17 @@ export default {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  text-align: center;
   color: #2c3e50;
   margin-top: 60px;
 }
 
+
+label {
+  text-align: left;
+}
+
 input {
+  text-align: left;
   display: block;
   margin: 0 auto;
   text-align: center;
