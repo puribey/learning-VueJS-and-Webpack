@@ -37,10 +37,10 @@ Slots allow us to input data from a parent component into a child component.
 * v-model.lazy="blog.title" is to make the content output when we change inputs, press tab or move out of the input. 
 ---
 
-# HTTP Requests in Vue
+## HTTP Requests in Vue
 
 
-## POST blog 
+### POST blog 
 
 1. Install vue resource: npm install vue-resource --save
 2. Create a button to submit blog post. 
@@ -62,7 +62,7 @@ Slots allow us to input data from a parent component into a child component.
         }
     }
 
-## GET blogs 
+### GET blogs 
 
     *in showBlogs.vue*
 
@@ -78,7 +78,41 @@ Slots allow us to input data from a parent component into a child component.
 
 --- 
 
-# Custom Directives 
+## Custom Directives 
+
+     // Custom Directives 
+     Vue.directive('rainbow', {
+        bind(el,binding,vnode){
+            el.style.color = "#" + Math.random().toString().slice(2,8);
+        } 
+     });
+
+* Are directives such as v-for or v-if created by us. 
+* It's like creating a function but different. Basically we create a Vue.directive in our main.js that will recieve a name and a function as parameters. 
+
+
+---
+
+
+## Filters
+
+    <article>{{blog.body | snippet}}</article>
+
+    Vue.filter('snippet', function(val){
+        return val.slice(0,100) + "...";
+    }); 
+
+* We can use a filter to change the output of data to a browser. 
+* They don't actually change the data directly. 
+* In order to use it we need a | (pipe) and a filter name. 
+
+---
+
+## Custom Search Filter 
+
+ 
+
+
 
 
 
