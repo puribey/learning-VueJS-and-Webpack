@@ -4,13 +4,7 @@ import VueResource from 'vue-resource'
 
 Vue.use(VueResource);
 
-// Custom Directives 
-Vue.directive('rainbow', {
-	bind(el,binding,vnode){
-		el.style.color = "#" + Math.random().toString().slice(2,8);
-	} 
-});
-
+// Custom Directives Global
 Vue.directive('theme', {
 	bind(el,binding,vnode){
 		if(binding.value == 'wide'){
@@ -25,11 +19,7 @@ Vue.directive('theme', {
 	}
 });
 
-// Filters 
-Vue.filter('to-uppercase', function(val){
-	return val.toUpperCase();
-});
-
+// Filters Global
 Vue.filter('snippet', function(val){
 	return val.slice(0,100) + "...";
 });

@@ -110,7 +110,57 @@ Slots allow us to input data from a parent component into a child component.
 
 ## Custom Search Filter 
 
- 
+     computed: {
+       filteredBlogs: function(){
+         return this.blogs.filter((blog) => {
+           return blog.title.match(this.search);
+         });
+       }
+     },
+
+* See showBlogs.vue where I have created a search bar with a v-model="search".
+* What this computed function does is to compare what is writen there with the content of the blogs and return true or false. 
+* When it's false, it will not show the blog and when it's true it will. 
+
+
+--- 
+
+## Registering Things Locally
+
+
+     <h2 v-rainbow>{{blog.title | to-uppercase }}</h2>
+
+     filters: { // Filters Local
+       toUppercase(val){ // Grabs filter name and uses Camel Case 
+         return val.toUpperCase();
+       }
+     },
+
+* We can store directives locally inside of the components. Ex: filters 
+* With directives is different because they are not functions but objects. Ex: see showBlogs.vue
+
+---
+
+## Mixins 
+
+* Chunk of code that we can reuse over and over and over again in different places. :)
+
+1. Create a mixins folder inside src folder in project. 
+2. Create searchMixin.js inside mixins folder. 
+3. Inside searchMixin.js export default and put computed fuction there. 
+4. Go to component and import mixin: *import searchMixin from '../mixins/searchMixin.js'*
+5. Create mixin array and call for the mixin: *mixins: [searchMixin]*
+6. Do this last two steps with every component you want. 
+
+---
+
+## Setting up Routing 
+
+
+
+
+
+
 
 
 

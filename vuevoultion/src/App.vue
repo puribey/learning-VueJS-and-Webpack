@@ -2,6 +2,7 @@
   <div id="app">
     <add-blog></add-blog>
     <show-blogs></show-blogs>
+    <list-blogs></list-blogs>
   </div>
 
   <!-- TUTORIAL 28 = Dynamic Components
@@ -38,6 +39,7 @@
 // import formTwo from './components/formTwo.vue'; // TUTORIAL 28 = Dynamic Components
 import addBlog from './components/addBlog.vue';
 import showBlogs from './components/showBlogs.vue';
+import listBlogs from './components/listBlogs.vue';
 
 
 export default {
@@ -46,7 +48,8 @@ export default {
     //'form-one': formOne, // TUTORIAL 28 = Dynamic Components
     //'form-two': formTwo // TUTORIAL 28 = Dynamic Components
     'add-blog': addBlog,
-    'show-blogs': showBlogs
+    'show-blogs': showBlogs,
+    'list-blogs': listBlogs
   },
   data () {
     return {

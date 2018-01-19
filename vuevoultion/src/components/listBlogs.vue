@@ -1,6 +1,6 @@
 <template>
-  <div v-theme:column="'narrow'" id="show-blogs">
-    <h1>All Blog Articles</h1>
+  <div  id="show-blogs">
+    <h1>List Blog titles</h1>
     <input class="searchBar" type="text" v-model="search" placeholder="search blogs">
     <div v-for="blog in filteredBlogs" class="single-blog">
       <h2 v-rainbow>{{blog.title | to-uppercase }}</h2> <!-- custom directive and filter --> 
@@ -8,7 +8,6 @@
     </div>
   </div>
 </template>
-
 
 <script>
 import searchMixin from '../mixins/searchMixin.js'
@@ -27,7 +26,7 @@ export default {
     }
   },
   computed: {
-   
+    
   },
   filters: { // Filters Local
     toUppercase(val){ // Grabs filter name and uses Camel Case 
@@ -41,6 +40,7 @@ export default {
       } 
     }
   },
+  mixins: [searchMixin],
   created(){
     this.$http.get('https://jsonplaceholder.typicode.com/posts').then(function(data){
       // console.log(data);
