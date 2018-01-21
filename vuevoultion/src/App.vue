@@ -1,8 +1,7 @@
 <template>
   <div id="app">
-    <add-blog></add-blog>
-    <show-blogs></show-blogs>
-    <list-blogs></list-blogs>
+    <app-header></app-header> 
+    <router-view></router-view>
   </div>
 
   <!-- TUTORIAL 28 = Dynamic Components
@@ -40,6 +39,7 @@
 import addBlog from './components/addBlog.vue';
 import showBlogs from './components/showBlogs.vue';
 import listBlogs from './components/listBlogs.vue';
+import header from './components/header.vue';
 
 
 export default {
@@ -49,7 +49,8 @@ export default {
     //'form-two': formTwo // TUTORIAL 28 = Dynamic Components
     'add-blog': addBlog,
     'show-blogs': showBlogs,
-    'list-blogs': listBlogs
+    'list-blogs': listBlogs,
+    'app-header': header
   },
   data () {
     return {
@@ -60,12 +61,15 @@ export default {
 </script>
 
 <style>
+body {
+  margin:0;
+  padding: 0;
+}
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 

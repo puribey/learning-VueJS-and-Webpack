@@ -153,12 +153,45 @@ Slots allow us to input data from a parent component into a child component.
 6. Do this last two steps with every component you want. 
 
 ---
+## Routing
 
-## Setting up Routing 
+### Setting up Routing 
 
+* We first need to install: *npm install vue-router --save* 
+* Import in main.js: *import VueRouter from 'vue-router'*
+* And then state we are going to use it there too: *Vue.use(VueRouter);*
+* Create a new instance of the VueRouter: *const router = new VueRouter({})*
+* Create a *routes.js* file inside *src* folder. 
+* Create routes there
+* Import routes.js inside main.js: *import Routes from './routes.js'*
+* Use it inside the object: *const router = new VueRouter({ routes: Routes })*
+* Call instance inside App instance.
+* Go to App.vue and erase hardcoding 
 
+### Routing modes 
 
+* When using # in a link we are not making any requests to the server. We are just targeting and id. 
+* Without it, we would be doing requests to the server. 
+* In other servers we may need to set up the server to use this but vue comes with the set up already made for us. 
+* Inside router instance put: mode:'history'
 
+### Route links 
+
+     <nav>
+        <ul>
+            <li><router-link to="/" exact>Blog</router-link></li>
+            <li><router-link to="/add" exact>Add Blog</router-link></li>
+        </ul>
+     </nav>
+
+* Create a new component called header.vue and import it in App.vue so it can work. 
+* Instead of using *anchors* inside our nav we are going to use router-link with a *to* attr.
+* Also we are going to add the *exact* attr which will make the web to only react when route is exact to what its indicated. 
+
+### Route parameters 
+
+* See singleBlog.vue to see how this works. 
+* Also go to showBlogs.vue to see how it's applied.   
 
 
 
