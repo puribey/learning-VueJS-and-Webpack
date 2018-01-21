@@ -193,6 +193,12 @@ Slots allow us to input data from a parent component into a child component.
 * See singleBlog.vue to see how this works. 
 * Also go to showBlogs.vue to see how it's applied.   
 
+---
+
+# DB made with firebase
+
+
+
 
 
 

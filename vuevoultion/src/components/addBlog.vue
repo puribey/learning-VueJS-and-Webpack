@@ -8,13 +8,13 @@
             <textarea v-model.lazy="blog.content"></textarea>
             <div id="checkboxes">
                 <label>Ninjas</label>
-                <input type="checkbox" value="ninjas" v-model="blog.categories">
+                <input type="checkbox" value="Ninjas" v-model="blog.categories">
                 <label>Wizards</label>
-                <input type="checkbox" value="wizards" v-model="blog.categories">
+                <input type="checkbox" value="Wizards" v-model="blog.categories">
                 <label>Mario</label>
-                <input type="checkbox" value="mario" v-model="blog.categories">
+                <input type="checkbox" value="Mario" v-model="blog.categories">
                 <label>Jesus</label>
-                <input type="checkbox" value="jesus" v-model="blog.categories">
+                <input type="checkbox" value="Jesus" v-model="blog.categories">
             </div>
             <label>Author</label>
             <select v-model="blog.author">
@@ -61,11 +61,7 @@ export default {
     },
     methods: {
         postForm: function(){ // use of vue-resourse 
-            this.$http.post('https://jsonplaceholder.typicode.com/posts',{
-                title: this.blog.title,
-                body: this.blog.content,
-                userID: 1
-            }).then(function(data){
+            this.$http.post('https://vuejs-db-a5a56.firebaseio.com/posts.json', this.blog).then(function(data){
                 console.log(data);
                 this.submitted = true;
             });
