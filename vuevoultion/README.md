@@ -34,7 +34,7 @@ Slots allow us to input data from a parent component into a child component.
 
     *in addBlog.vue* --> see code
 * We can use input binding to clone what we write in an input inside another section of our page.
-* v-model.lazy="blog.title" is to make the content output when we change inputs, press tab or move out of the input. 
+* **v-model.lazy="blog.title"** is to make the content output when we change inputs, press tab or move out of the input. 
 ---
 
 ## HTTP Requests in Vue
@@ -42,7 +42,7 @@ Slots allow us to input data from a parent component into a child component.
 
 ### POST blog 
 
-1. Install vue resource: npm install vue-resource --save
+1. Install vue resource: **npm install vue-resource --save**
 2. Create a button to submit blog post. 
 
     <button class="btnSubmit" @click.prevent="postForm">Add Blog</button>
@@ -87,7 +87,7 @@ Slots allow us to input data from a parent component into a child component.
         } 
      });
 
-* Are directives such as v-for or v-if created by us. 
+* Are **directives** such as **v-for** or **v-if** created by us. 
 * It's like creating a function but different. Basically we create a Vue.directive in our main.js that will recieve a name and a function as parameters. 
 
 
@@ -118,7 +118,7 @@ Slots allow us to input data from a parent component into a child component.
        }
      },
 
-* See showBlogs.vue where I have created a search bar with a v-model="search".
+* See showBlogs.vue where I have created a search bar with a **v-model="search"**
 * What this computed function does is to compare what is writen there with the content of the blogs and return true or false. 
 * When it's false, it will not show the blog and when it's true it will. 
 
@@ -148,8 +148,8 @@ Slots allow us to input data from a parent component into a child component.
 1. Create a mixins folder inside src folder in project. 
 2. Create searchMixin.js inside mixins folder. 
 3. Inside searchMixin.js export default and put computed fuction there. 
-4. Go to component and import mixin: *import searchMixin from '../mixins/searchMixin.js'*
-5. Create mixin array and call for the mixin: *mixins: [searchMixin]*
+4. Go to component and import mixin: **import searchMixin from '../mixins/searchMixin.js'**
+5. Create mixin array and call for the mixin: **mixins: [searchMixin]**
 6. Do this last two steps with every component you want. 
 
 ---
@@ -157,14 +157,14 @@ Slots allow us to input data from a parent component into a child component.
 
 ### Setting up Routing 
 
-* We first need to install: *npm install vue-router --save* 
-* Import in main.js: *import VueRouter from 'vue-router'*
-* And then state we are going to use it there too: *Vue.use(VueRouter);*
-* Create a new instance of the VueRouter: *const router = new VueRouter({})*
-* Create a *routes.js* file inside *src* folder. 
+* We first need to install: **npm install vue-router --save** 
+* Import in main.js: **import VueRouter from 'vue-router'**
+* And then state we are going to use it there too: **Vue.use(VueRouter);**
+* Create a new instance of the VueRouter: **const router = new VueRouter({})**
+* Create a **routes.js** file inside **src** folder. 
 * Create routes there
-* Import routes.js inside main.js: *import Routes from './routes.js'*
-* Use it inside the object: *const router = new VueRouter({ routes: Routes })*
+* Import routes.js inside main.js: **import Routes from './routes.js'**
+* Use it inside the object: **const router = new VueRouter({ routes: Routes })**
 * Call instance inside App instance.
 * Go to App.vue and erase hardcoding 
 
@@ -185,8 +185,8 @@ Slots allow us to input data from a parent component into a child component.
      </nav>
 
 * Create a new component called header.vue and import it in App.vue so it can work. 
-* Instead of using *anchors* inside our nav we are going to use router-link with a *to* attr.
-* Also we are going to add the *exact* attr which will make the web to only react when route is exact to what its indicated. 
+* Instead of using **anchors** inside our nav we are going to use router-link with a **to** attr.
+* Also we are going to add the **exact** attr which will make the web to only react when route is exact to what its indicated. 
 
 ### Route parameters 
 
@@ -195,7 +195,7 @@ Slots allow us to input data from a parent component into a child component.
 
 ---
 
-# DB made with firebase
+#### This DB was made with firebase
 
 
 
