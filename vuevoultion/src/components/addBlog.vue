@@ -18,7 +18,7 @@
             </div>
             <label>Author</label>
             <select v-model="blog.author">
-                <option v-for="author in authors" >{{author}}</option>
+                <option v-for="author in authors" :key="author">{{author}}</option>
             </select>
             <div>
             <button class="btnSubmit" @click.prevent="postForm">Add Blog</button>
@@ -33,7 +33,7 @@
             <p>Blog content: {{blog.content}}</p>
             <p>Blog categories:</p>
             <ul>
-                <li v-for="category in blog.categories">{{category}}</li>
+                <li v-for="category in blog.categories" :key="category">{{category}}</li>
             </ul>
             <p>Author: {{blog.author}}</p>
         </div>

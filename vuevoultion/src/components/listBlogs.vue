@@ -2,7 +2,7 @@
   <div  id="show-blogs">
     <h1>List Blog titles</h1>
     <input class="searchBar" type="text" v-model="search" placeholder="search blogs">
-    <div v-for="blog in filteredBlogs" class="single-blog">
+    <div v-for="blog in filteredBlogs" class="single-blog" :key="blog">
       <h2 v-rainbow>{{blog.title | to-uppercase }}</h2> <!-- custom directive and filter --> 
       <article>{{blog.body | snippet}}</article>
     </div>

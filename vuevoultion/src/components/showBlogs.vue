@@ -2,7 +2,7 @@
   <div v-theme:column="'narrow'" id="show-blogs">
     <h1>All Blog Articles</h1>
     <input class="searchBar" type="text" v-model="search" placeholder="search blogs">
-    <div v-for="blog in filteredBlogs" class="single-blog">
+    <div v-for="blog in filteredBlogs" :key="blog" class="single-blog">
       <router-link v-bind:to="'/blog/'+blog.id" class="anchor"><h2 v-rainbow>{{blog.title | to-uppercase }}</h2></router-link> <!-- custom directive and filter --> 
       <article>{{blog.content | snippet}}</article>
     </div>
